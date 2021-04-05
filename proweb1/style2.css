@@ -1,0 +1,107 @@
+.navbar a{
+
+color: white;
+
+}
+
+.navbar li a:hover{
+
+background: orange;
+
+}
+
+/* mengatur posisi dari gambar header.jpg */
+
+.navbar-custom{
+
+position: absolute;
+
+top: 0;
+
+width: 100%;
+
+}
+
+header{
+
+height: 450px; /*mengatur ukuran lebar dari gambar
+header.jpg*/
+
+padding: 450px 50px; /*mengatur posisi header.jpg
+top:150px right:50px*/
+
+color: white;
+
+}
+
+header h1 {
+
+font-size: 50px;
+
+}
+
+/* Mengatur tampilan dari postingan */
+
+#post h1{ /*Untuk judul postingan diatur dgn
+huruf bold*/
+
+font-weight: bold;
+
+}
+
+#post h1 a { /*untuk mengatur tampilan judul sbg
+hyperlink*/
+
+color: black;
+
+text-decoration: none; /*idealnya hyperlink bergaris
+bawah krn dibuat none jadi tidak memiliki garis bwh*/
+
+}
+
+#post h1 a:hover { /*ketika cursor berada di atas
+tulisan judul, warna berubah jadi merah*/
+
+color: red;
+
+}
+
+#post { /*Membuat garis batas dengan
+warna abu-abu*/
+
+border-bottom: 1px solid gray;
+
+}
+
+.tbl-bwh{
+
+padding: 30px 0px;
+
+}
+
+.btn-default:hover{
+
+background: #337AB7;
+
+border: 0;
+
+color: white;
+
+}
+
+.navtengah{
+
+float: none;
+
+display: table;
+
+table-layout: fixed;
+
+margin: 0 auto;
+
+}
+
+.navtengah li a:hover{
+
+background: white;
+]

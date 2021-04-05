@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NABILAH LUTHFIYAH</title>
+    <link rel="stylesheet" href="css/bootstrap.css"> 
+    <link rel="stylesheet" href="css/tugas4-style.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>      
+  </head>
+<body background="pin3.jpg">
+  
+    <header style="background: url(pin.jpg);"><center>
+       <nav class="navbar">
+      <div class="navbar-header">
+        </div>   
+        <!-- Membuat Search Bar -->
+<div class="nav navbar-nav form-inline navbar-right" style="padding: 10px;">
+          <div class="input-group">
+            <input type="text" class="form-control">
+            <div class="input-group-btn">
+              <button class="btn btn-default">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+          </div></div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="nabilapunya.html">Halaman Utama</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="hubungi.html">Author</a></li>
+          <li><a href="sosmed.html">Sosial Media</a></li>
+      <li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login</button>
+	  <?php
+include ("config.php");
+session_start();
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+  $admin = $db->prepare('SELECT * FROM akun WHERE username = :username and password = :password');
+  $admin->execute(array(
+                ':username' => $_POST['pengguna'],
+                'password' => $_POST['sandi']
+                ));
+  $row = $admin->fetch(PDO::FETCH_ASSOC);
+
+//kode lanjutan di slide berikutnya...
+
+if(empty($row['username'])){
+
+    echo "<div class='alert-danger text-center'><strong>Username dan Password tidak valid</strong></div>";
+
+  }
+  else {
+
+    $_SESSION['login_user'] = $_POST['pengguna'];
+
+    header("location: admin.php");
+  }
+}
+?>
+
+            <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Menu Login</h4>
+      </div>
+      <div class="modal-body">
+      
+        <form>
+          <table >
+            <center>
+  <tr>
+  <td >Username </td>
+  <td><input type="text"name="username"><br></td>
+</tr>
+<tr>
+  <td></td>
+</tr>
+<tr>
+	<td></td>
+</tr>
+<tr>
+  <td>Password </td>
+  <td><input type="password"name="password"><br></td>
+</tr>
+<tr>
+  <td></td>
+  <td><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Login</button></td>
+
+</tr>
+</table>
+</form>
+
+      </div>
+      
+        <center><p>Belum Punya Akun? Daftar <a href="daftar1.php">disini!</a></p>
+      
+    </div>
+
+  </div>
+</div>
+</div>
+        </ul>
+      </nav>
+
+
+      <div class="text-center">
+          <h1>SERIAL DRAMA KOREA TERLARIS</h1>
+          <div class="lead">Korea Edition</div>
+          <br>
+          <br>
+          <br>
+          <br>
+      </div>
+    </header>
+          <!-- Membuat Postingan -->
+    <div class="container" style="margin-top:10px">
+	<div class="row">
+		<div class="col-md-9">
+			<div class="panel panel-default">
+			<div class="panel-body" style="background-image:url(pin4.jpg);">
+				<h3>DESCENDANT OF THE SUN</h3>
+				<hr>
+					<div class="media">
+						<a class="pull-left" href="#">
+							<img class="media-object" src="korea.jpg" width="100%" height="200px">
+						</a>
+					<div class="media-body">
+					<p><font size="2px">
+					Descendants of the Sun (Hangul: 태양의 후예; RR: Taeyang-ui Huye) adalah serial televisi Korea Selatan tahun 2016 yang dibintangi Song Joong-ki, 
+					Song Hye-kyo, Jin Goo dan Kim Ji-won. Drama ini disiarkan di KBS2 mulai 24 Februari hingga 14 April 2016 setiap Rabu dan Kamis pukul 22.00 untuk 16 episode....
+					</p>
+					</div>
+					<p style="text-align:right;">
+					<a href="dots.html">
+					<button class="btn btn-primary">Baca Selengkapnya</button>
+					</a>
+					</p>
+					</div>
+					</div>
+					</div>
+<div class="row" style="margin-left: 1em">
+    <div class="col-md-9">
+      <div id="post">
+        <br>
+        <div class="container" style="margin-top:10px">
+	<div class="row">
+		<div class="col-md-9">
+			<div class="panel panel-default">
+			<div class="panel-body" style="background-image:url(pin4.jpg);">
+				<h3>BOYS OVER FLOWERS</h3>
+				<hr>
+					<div class="media">
+						<a class="pull-left" href="#">
+							<img class="media-object" src="bbf.jpg" width="100%" height="200px">
+						</a>
+					<div class="media-body">
+					<p><font size="2px">
+					Boys Over Flowers (Korea: 꽃보다 男子 atau 꽃보다 남자) adalah drama adaptasi Korea 
+					yang diadaptasi dari manga Jepang Hana Yori Dango. Boys Before Flowers sendiri mulai ditayangkan 
+					tanggal 5 Januari 2009 di KBS2TV dan berakhir pada tanggal 31 Maret 2009 dengan 25 episode. 
+					Sebelumnya serial ini sudah pernah dibuat dari negara asia seperti Jepang, Taiwan, serta Indonesia. 
+					Film ini bergenre romantis, tak luput dari serial dari negara sebelumnya serial ini cukup menyorot penonton 
+					di Korea Selatan. Walaupun serial ini pernah diliris, namun sutradara membuat serial ini lebih berbeda dari 
+					serial sebelumnya...
+					</p>
+					</div>
+					<p style="text-align:right;">
+					<a href="bbf.html">
+					<button class="btn btn-primary">Baca Selengkapnya</button>
+					</a>
+					</p>
+					</div>
+					</div>
+					</div>
+					<div class="row" style="margin-left: 1em">
+    <div class="col-md-9">
+      <div id="post">
+        <br>
+        <div class="container" style="margin-top:10px">
+	<div class="row">
+		<div class="col-md-9">
+			<div class="panel panel-default">
+			<div class="panel-body" style="background-image:url(pin4.jpg);">
+				<h3>HEALER</h3>
+				<hr>
+					<div class="media">
+						<a class="pull-left" href="#">
+							<img class="media-object" src="healer.jpg" width="100%" height="200px">
+						</a>
+					<div class="media-body">
+					<p><font size="2px">
+					Healer (Hangul: 힐러; RR: Hilleo) adalah serial televisi Korea Selatan tahun 
+					2014-2015 yang dibintangi oleh Ji Chang-wook,Park Min-young dan Yoo Ji-tae.
+					Drama ini disiarkan di KBS2 dari 8 Desember 2014 sampai 10 Februari 2015 pada 
+					hari Senin dan Selasa pukul 22.00 selama 20 episode.
+					</p>
+					</div>
+					<p style="text-align:right;">
+					<a href="healer.html">
+					<button class="btn btn-primary">Baca Selengkapnya</button>
+					</a>
+					</p>
+					</div>
+					</div>
+					</div>
+					<marquee>Terima Kasih Telah Berkunjung</marquee>
+    <footer>
+      <div class="container-fluid">
+        <hr>
+        <ul class="nav navbar-nav navtengah">
+          <li><a href="index.html">Halaman Utama</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="sosmed.html">Sosial Media</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
